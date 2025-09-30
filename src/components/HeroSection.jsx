@@ -74,15 +74,15 @@ const HeroSection = () => {
       </div>
 
       {/* Scroll Indicator - Fixed Position at Bottom */}
-      <div className="absolute bottom-6 sm:bottom-8 left-1/2 transform -translate-x-1/2 z-20">
-        <div className="flex flex-col items-center text-white/80 hover:text-white transition-colors duration-300 cursor-pointer animate-bounce-subtle">
-          <span className="text-xs sm:text-sm mb-2 font-medium">Scroll to explore</span>
-          <div className="w-6 h-10 border-2 border-white/60 rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-white/80 rounded-full mt-2 animate-pulse"></div>
+        <div className="absolute bottom-12 sm:bottom-8 left-1/2 transform -translate-x-1/2 z-20">
+          <div className="flex flex-col items-center text-white/80 hover:text-white transition-colors duration-300 cursor-pointer animate-bounce-subtle">
+            <span className="text-xs sm:text-sm mb-2 font-medium">Scroll to explore</span>
+            <div className="w-6 h-10 border-2 border-white/60 rounded-full flex justify-center">
+              <div className="w-1 h-3 bg-white/80 rounded-full mt-2 animate-pulse"></div>
+            </div>
           </div>
-          
         </div>
-      </div>
+
     </section>
   );
 };
