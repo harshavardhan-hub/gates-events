@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
 import PageTransition from '../components/PageTransition.jsx';
 import { SITE_CONFIG, ASSETS } from '../utils/constants.js';
 
@@ -233,24 +234,22 @@ const About = () => {
               </div>
             </div>
 
-            {/* Call to Action */}
+            {/* Call to Action - Updated with Link */}
             <div className="bg-gradient-accent rounded-2xl p-8 text-white text-center">
               <h2 className="text-2xl md:text-3xl font-bold mb-4">Join Our Legacy</h2>
               <p className="text-lg mb-6 text-gray-100">
                 Be part of GATES Events 2K25 and experience the spirit of innovation, 
                 community service, and academic excellence.
               </p>
-              <a
-                href={SITE_CONFIG.links.registrationForm}
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                to="/explore"
                 className="bg-white text-cyan-600 font-semibold py-3 px-8 rounded-xl hover:bg-gray-100 transition-colors duration-300 inline-flex items-center"
               >
-                Register for Events
+                Explore Events
                 <svg className="ml-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-2M7 7l10 10M17 7v4" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                 </svg>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

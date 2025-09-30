@@ -1,0 +1,35 @@
+gates-events-2k25/
+├── public/
+│   ├── index.html
+│   └── favicon.ico
+├── src/
+│   ├── components/
+│   │   ├── Navbar.jsx
+│   │   ├── Footer.jsx
+│   │   ├── EventCard.jsx
+│   │   ├── EventFilters.jsx
+│   │   ├── HeroSection.jsx
+│   │   ├── FlashNews.jsx
+│   │   └── PageTransition.jsx
+│   ├── pages/
+│   │   ├── Home.jsx
+│   │   ├── About.jsx
+│   │   ├── ExploreEvents.jsx
+│   │   └── EventDetail.jsx
+│   ├── data/
+│   │   └── events.js
+│   ├── styles/
+│   │   ├── _theme.scss
+│   │   └── index.css
+│   ├── utils/
+│   │   └── constants.js
+│   ├── App.jsx
+│   └── main.jsx
+├── .gitignore
+├── eslint.config.js
+├── index.html
+├── package.json
+├── postcss.config.js
+├── tailwind.config.js
+├── vite.config.js
+└── README.md
