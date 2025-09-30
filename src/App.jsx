@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import Navbar from './components/Navbar.jsx';
 import Footer from './components/Footer.jsx';
+import ScrollToTop from './components/ScrollToTop.jsx';
 import Home from './pages/Home.jsx';
 import About from './pages/About.jsx';
 import ExploreEvents from './pages/ExploreEvents.jsx';
@@ -14,6 +15,9 @@ function App() {
     <HelmetProvider>
       <Router>
         <div className="min-h-screen bg-white flex flex-col">
+          {/* Scroll to top on route change */}
+          <ScrollToTop />
+          
           {/* Navigation */}
           <Navbar />
           
