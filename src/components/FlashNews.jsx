@@ -1,44 +1,16 @@
 import React from 'react';
-import { DEPARTMENT_STATS } from '../utils/constants.js';
 
 const FlashNews = () => {
-  const departmentEntries = Object.entries(DEPARTMENT_STATS);
-
   return (
     <section id="flash-news" className="py-16 bg-gray-50">
       <div className="container-custom">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Flash News & Statistics
+            Latest Updates
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Current enrollment statistics across all departments at GATES Institute of Technology
+            Stay informed with the latest news and updates about Gates Events 2K25
           </p>
-        </div>
-
-        {/* Department Statistics Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 mb-12">
-          {departmentEntries.map(([department, count], index) => (
-            <div
-              key={department}
-              className="bg-white rounded-2xl shadow-lg p-6 text-center hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center">
-                <span className="text-white font-bold text-lg">
-                  {department.slice(0, 3)}
-                </span>
-              </div>
-              
-              <h3 className="text-2xl font-bold text-gray-900 mb-1">
-                {count}
-              </h3>
-              
-              <p className="text-gray-600 text-sm font-medium">
-                {getDepartmentFullName(department)}
-              </p>
-            </div>
-          ))}
         </div>
 
         {/* Quick News Updates - Mobile Optimized */}
@@ -47,7 +19,7 @@ const FlashNews = () => {
             <svg className="h-6 w-6 text-blue-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
-            Latest Updates
+            News & Announcements
           </h3>
           
           <div className="space-y-4 sm:space-y-6">
@@ -259,7 +231,7 @@ const MobileNewsItem = ({ date, title, description, type }) => {
   );
 };
 
-// Mobile Timeline Item Component (unchanged)
+// Mobile Timeline Item Component
 const MobileTimelineItem = ({ date, title, description, color }) => {
   const getColorClasses = (color) => {
     switch (color) {
@@ -294,7 +266,7 @@ const MobileTimelineItem = ({ date, title, description, color }) => {
   );
 };
 
-// Desktop Timeline Item Component (unchanged)
+// Desktop Timeline Item Component
 const DesktopTimelineItem = ({ date, title, description, position, color }) => {
   const getColorClasses = (color) => {
     switch (color) {
@@ -323,22 +295,6 @@ const DesktopTimelineItem = ({ date, title, description, position, color }) => {
       <div className="w-1/2"></div>
     </div>
   );
-};
-
-// Helper function to get full department names (unchanged)
-const getDepartmentFullName = (dept) => {
-  const departmentNames = {
-    'CSE': 'Computer Science',
-    'CSE-AI': 'CSE - AI & ML',
-    'CIVIL': 'Civil Engineering',
-    'ECE': 'Electronics & Comm',
-    'EEE': 'Electrical & Electronics',
-    'MECH': 'Mechanical Engg',
-    'MBA': 'Business Admin',
-    'MCA': 'Computer Applications'
-  };
-  
-  return departmentNames[dept] || dept;
 };
 
 export default FlashNews;

@@ -16,6 +16,11 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    // Close mobile menu when route changes
+    setIsMenuOpen(false);
+  }, [location]);
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -32,6 +37,9 @@ const Navbar = () => {
     }
   };
 
+  // Filter out Flash News from navigation links
+  const filteredNavLinks = NAV_LINKS.filter(link => link.id !== 'flash-news');
+
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       isScrolled 
@@ -43,20 +51,24 @@ const Navbar = () => {
           {/* Logo */}
           <Link 
             to="/" 
-            className="flex items-center space-x-3 hover:opacity-80 transition-opacity duration-300"
+            className="flex items-center space-x-2 sm:space-x-3 hover:opacity-80 transition-opacity duration-300"
             onClick={() => setIsMenuOpen(false)}
           >
             <img
               src={ASSETS.logo}
               alt="Gates College Logo"
-              className="h-10 w-auto object-contain"
+              className="h-8 sm:h-10 w-auto object-contain"
             />
-            
+            <span className={`font-bold text-base sm:text-lg md:text-xl ${
+              isScrolled ? 'text-gray-900' : 'text-white'
+            }`}>
+              GATES
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            {NAV_LINKS.map((link) => (
+            {filteredNavLinks.map((link) => (
               <Link
                 key={link.id}
                 to={link.href}
@@ -98,6 +110,7 @@ const Navbar = () => {
                 : 'text-white hover:bg-white/10'
             }`}
             aria-label="Toggle menu"
+            aria-expanded={isMenuOpen}
           >
             <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               {isMenuOpen ? (
@@ -109,31 +122,56 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Navigation - Compact Design */}
         {isMenuOpen && (
           <div className="md:hidden bg-white/95 backdrop-blur-md border-t border-gray-200 shadow-lg">
-            <div className="px-4 py-4 space-y-4">
-              {NAV_LINKS.map((link) => (
+            <div className="px-4 py-4 space-y-2">
+              {filteredNavLinks.map((link) => (
                 <Link
                   key={link.id}
                   to={link.href}
                   onClick={() => handleLinkClick(link.href)}
-                  className={`block py-2 font-medium transition-colors duration-300 ${
+                  className={`block py-2 px-3 rounded-lg text-sm font-medium transition-all duration-300 ${
                     location.pathname === link.href
-                      ? 'text-primary border-l-4 border-primary pl-4'
-                      : 'text-gray-700 hover:text-primary hover:pl-2'
+                      ? 'text-primary bg-blue-50 border-l-2 border-primary'
+                      : 'text-gray-700 hover:text-primary hover:bg-gray-50'
                   }`}
                 >
-                  {link.name}
+                  <div className="flex items-center">
+                    {/* Smaller icons for mobile menu items */}
+                    {link.id === 'home' && (
+                      <svg className="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                      </svg>
+                    )}
+                    {link.id === 'explore' && (
+                      <svg className="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                      </svg>
+                    )}
+                    {link.id === 'about' && (
+                      <svg className="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    )}
+                    <span>{link.name}</span>
+                  </div>
                 </Link>
               ))}
-              <Link
-                to="/explore"
-                onClick={() => setIsMenuOpen(false)}
-                className="btn-primary mt-4 w-full text-center"
-              >
-                Register Now
-              </Link>
+              
+              {/* Compact Mobile CTA Button */}
+              <div className="pt-3 border-t border-gray-200">
+                <Link
+                  to="/explore"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold py-2.5 px-4 rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 inline-flex items-center justify-center text-sm shadow-md"
+                >
+                  <svg className="h-4 w-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+                  </svg>
+                  Register for Events
+                </Link>
+              </div>
             </div>
           </div>
         )}

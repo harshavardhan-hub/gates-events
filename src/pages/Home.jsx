@@ -3,14 +3,10 @@ import { Helmet } from 'react-helmet-async';
 import HeroSection from '../components/HeroSection.jsx';
 import FlashNews from '../components/FlashNews.jsx';
 import PageTransition from '../components/PageTransition.jsx';
-import EventCard from '../components/EventCard.jsx';
 import { Link } from 'react-router-dom';
-import { getFeaturedEvents } from '../data/events.js';
 import { SITE_CONFIG } from '../utils/constants.js';
 
 const Home = () => {
-  const featuredEvents = getFeaturedEvents();
-
   return (
     <PageTransition>
       <Helmet>
@@ -24,86 +20,6 @@ const Home = () => {
 
       {/* Hero Section */}
       <HeroSection />
-
-      {/* Featured Events Section - Fixed Layout */}
-      <section className="py-16 sm:py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
-        <div className="container-custom">
-          {/* Section Header */}
-          <div className="text-center mb-12 sm:mb-16">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl mb-6">
-              <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
-              </svg>
-            </div>
-            
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
-              Featured <span className="text-gradient bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Events</span>
-            </h2>
-            
-            <p className="text-lg sm:text-xl lg:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              Don't miss these highlight events that showcase the best of 
-              <span className="font-semibold text-blue-600"> innovation</span>, 
-              <span className="font-semibold text-purple-600"> creativity</span>, and 
-              <span className="font-semibold text-indigo-600"> talent</span> at Gates Events 2K25
-            </p>
-          </div>
-
-          {/* Featured Events Grid - Perfect 3 Column Layout for Laptop */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
-            {featuredEvents.map((event, index) => (
-              <div
-                key={event.id}
-                className="transform hover:scale-105 transition-all duration-500"
-                style={{
-                  animationDelay: `${index * 0.2}s`,
-                }}
-              >
-                <EventCard 
-                  event={event} 
-                  featured={true}
-                />
-              </div>
-            ))}
-          </div>
-
-          {/* Call to Action */}
-          <div className="text-center">
-            <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-2xl border border-white/20 max-w-4xl mx-auto">
-              <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-                Ready to Explore More?
-              </h3>
-              <p className="text-lg text-gray-600 mb-8">
-                Discover all the amazing events we have planned for you
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <Link
-                  to="/explore"
-                  className="w-full sm:w-auto bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-2xl shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 text-base sm:text-lg inline-flex items-center justify-center group"
-                >
-                  <svg className="w-5 h-5 mr-2 group-hover:rotate-12 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                  </svg>
-                  View All Events
-                  <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                  </svg>
-                </Link>
-                
-                <Link
-                  to="/about"
-                  className="w-full sm:w-auto bg-white text-gray-700 font-semibold py-3 sm:py-4 px-6 sm:px-8 rounded-2xl shadow-lg hover:shadow-xl border-2 border-gray-200 hover:border-gray-300 transform hover:-translate-y-1 transition-all duration-300 text-base sm:text-lg inline-flex items-center justify-center"
-                >
-                  <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                  </svg>
-                  About College
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Why Choose Gates Events Section */}
       <section className="py-16 sm:py-20 bg-white">
