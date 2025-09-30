@@ -59,11 +59,7 @@ const Navbar = () => {
               alt="Gates College Logo"
               className="h-8 sm:h-10 w-auto object-contain"
             />
-            <span className={`font-bold text-base sm:text-lg md:text-xl ${
-              isScrolled ? 'text-gray-900' : 'text-white'
-            }`}>
-              GATES
-            </span>
+      
           </Link>
 
           {/* Desktop Navigation */}

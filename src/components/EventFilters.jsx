@@ -61,27 +61,6 @@ const EventFilters = ({ activeFilter, onFilterChange, eventCounts }) => {
           </button>
         ))}
       </div>
-
-      {/* Filter Description */}
-      <div className="mt-6 pt-6 border-t border-gray-100">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-gray-600">
-          <div className="flex items-start space-x-3">
-            <div className="w-3 h-3 bg-blue-500 rounded-full mt-1 flex-shrink-0"></div>
-            <div>
-              <p className="font-medium text-gray-900">Technical Events</p>
-              <p>Hackathons, coding competitions, robotics, and tech workshops</p>
-            </div>
-          </div>
-          
-          <div className="flex items-start space-x-3">
-            <div className="w-3 h-3 bg-green-500 rounded-full mt-1 flex-shrink-0"></div>
-            <div>
-              <p className="font-medium text-gray-900">Non-Technical Events</p>
-              <p>Cultural programs, quizzes, arts, and general competitions</p>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   );
 };

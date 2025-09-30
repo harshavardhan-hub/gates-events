@@ -108,7 +108,7 @@ const ExploreEvents = () => {
               </div>
               <div className="text-center">
                 <div className="text-2xl font-bold">{eventCounts.nonTechnical}</div>
-                <div className="text-sm text-gray-300">Cultural</div>
+                <div className="text-sm text-gray-300">Non Technical</div>
               </div>
             </div>
           </div>
