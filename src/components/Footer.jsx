@@ -11,7 +11,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto">
           
           {/* Brand Section */}
-          <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
+          <div className="flex flex-col items-start lg:items-start text-left lg:text-left">
             <div className="flex items-center space-x-3 mb-6">
               <img
                 src={ASSETS.logo}
@@ -32,7 +32,7 @@ const Footer = () => {
             {/* Social Links */}
             <div>
               <h4 className="text-lg font-semibold mb-4">Follow Us</h4>
-              <div className="flex justify-center lg:justify-start space-x-4">
+              <div className="flex justify-start lg:justify-start space-x-4">
                 {Object.entries(SOCIAL_LINKS).map(([platform, url]) => (
                   <a
                     key={platform}
@@ -50,7 +50,7 @@ const Footer = () => {
           </div>
 
           {/* Contact Info */}
-          <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
+          <div className="flex flex-col items-start lg:items-start text-left lg:text-left">
             <h4 className="text-xl font-semibold mb-6">Contact Us</h4>
             <div className="space-y-5 text-gray-300">
               <div className="flex items-start space-x-4">
@@ -100,14 +100,14 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="border-t border-gray-700 mt-12 pt-8">
-          <div className="flex flex-col items-center space-y-6">
+          <div className="flex flex-col items-start lg:items-center space-y-6">
             
-            {/* Copyright - Desktop: One Line, Mobile: Separate Lines */}
-            <div className="text-center">
+            {/* Copyright - Mobile: Left aligned, Desktop: Center */}
+            <div className="text-left lg:text-center">
               <p className="text-gray-400 text-sm hidden lg:block">
                 © {currentYear} GATES Institute of Technology. All rights reserved.
               </p>
-              {/* Mobile View - Separate Lines */}
+              {/* Mobile View - Left aligned */}
               <div className="lg:hidden">
                 <p className="text-gray-400 text-sm">
                   © {currentYear} GATES Institute of Technology.
@@ -118,10 +118,10 @@ const Footer = () => {
               </div>
             </div>
             
-            {/* Created By Section - Desktop: One Line, Mobile: Separate Lines */}
-            <div className="flex flex-col items-center justify-center space-y-3 lg:space-y-0 text-sm">
+            {/* Created By Section - Mobile: Left aligned, Desktop: Center */}
+            <div className="flex flex-col items-start lg:items-center justify-start lg:justify-center space-y-3 lg:space-y-0 text-sm">
               
-              {/* Desktop View - One Line */}
+              {/* Desktop View - Center */}
               <div className="hidden lg:flex items-center justify-center space-x-2">
                 <span className="text-gray-500">Created by</span>
                 <a
@@ -138,8 +138,8 @@ const Footer = () => {
                 <span className="text-gray-400">Final Year ECE</span>
               </div>
               
-              {/* Mobile View - Separate Lines */}
-              <div className="lg:hidden flex flex-col items-center justify-center space-y-1 text-center">
+              {/* Mobile View - Left aligned */}
+              <div className="lg:hidden flex flex-col items-start justify-start space-y-1 text-left">
                 <div className="flex items-center space-x-2">
                   <span className="text-gray-500">Created by</span>
                   <a
@@ -154,7 +154,7 @@ const Footer = () => {
                     </svg>
                   </a>
                 </div>
-                <p className="text-gray-400 text-xs">Final Year ECE</p>
+                <p className="text-gray-400 text-xs">Final Year ECE Student</p>
               </div>
             </div>
           </div>
