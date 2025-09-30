@@ -14,7 +14,6 @@ export const NAV_LINKS = [
   { name: 'Home', href: '/', id: 'home' },
   { name: 'Explore Events', href: '/explore', id: 'explore' },
   { name: 'About', href: '/about', id: 'about' },
-  { name: 'Flash News', href: '#flash-news', id: 'flash-news' },
 ];
 
 // Event Categories
@@ -43,13 +42,12 @@ export const ASSETS = {
   placeholder: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=800&q=80',
 };
 
-// Social Media Links
+// Social Media Links - Updated
 export const SOCIAL_LINKS = {
-  facebook: '#',
-  twitter: '#',
+  facebook: 'https://www.facebook.com/gatesit.ac.in/',
   instagram: '#',
-  linkedin: '#',
-  youtube: '#',
+  linkedin: 'https://www.linkedin.com/school/gates-institute-of-technology-gooty/posts/?feedView=all',
+  youtube: 'https://www.youtube.com/@gatesinstituteoftechnology2939',
 };
 
 // Animation Variants
