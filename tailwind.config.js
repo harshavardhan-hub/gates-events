@@ -21,7 +21,8 @@ export default {
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',
         'slide-up': 'slideUp 0.6s ease-out',
-        'bounce-subtle': 'bounceSubtle 2s infinite',
+        'bounce-subtle': 'bounceSubtle 3s ease-in-out infinite',
+        'float': 'float 4s ease-in-out infinite',
       },
       keyframes: {
         fadeIn: {
@@ -34,7 +35,12 @@ export default {
         },
         bounceSubtle: {
           '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-5px)' },
+          '50%': { transform: 'translateY(-10px)' },
+        },
+        float: {
+          '0%, 100%': { transform: 'translateY(0) rotate(0deg)' },
+          '33%': { transform: 'translateY(-15px) rotate(2deg)' },
+          '66%': { transform: 'translateY(-8px) rotate(-2deg)' },
         },
       },
     },

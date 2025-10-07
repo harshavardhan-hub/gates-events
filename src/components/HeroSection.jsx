@@ -13,37 +13,233 @@ const HeroSection = () => {
           backgroundImage: `url(${ASSETS.heroBackground})`,
         }}
       >
-        {/* Dark Overlay for Readability */}
         <div className="hero-overlay" />
+      </div>
+
+
+      {/* Left Flower Pot Firecracker */}
+      <div className="absolute left-4 md:left-10 lg:left-20 bottom-16 md:bottom-20 lg:bottom-24 z-10">
+        <div className="firecracker-wrapper">
+          {/* Traditional Cone Pot */}
+          <div className="flower-pot-cone">
+            <div className="pot-opening"></div>
+            <div className="pot-cone-body">
+              <div className="golden-stripe"></div>
+              <div className="pattern-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+            <div className="pot-bottom"></div>
+          </div>
+          
+          {/* SUPER FESTIVE SPARKLE FOUNTAIN */}
+          <div className="festive-fountain">
+            {/* Golden Round Sparkles */}
+            {[...Array(18)].map((_, i) => (
+              <div 
+                key={`gold-${i}`}
+                className="sparkle golden"
+                style={{ 
+                  animationDelay: `${i * 0.15}s`,
+                  left: `${44 + (i % 5) * 3}%`
+                }}
+              />
+            ))}
+            
+            {/* Small Fire Flames */}
+            {[...Array(15)].map((_, i) => (
+              <div 
+                key={`flame-${i}`}
+                className="fire-flame"
+                style={{ 
+                  animationDelay: `${i * 0.18}s`,
+                  left: `${43 + (i % 5) * 3.5}%`
+                }}
+              />
+            ))}
+            
+            {/* Star Sparkles ⭐ */}
+            {[...Array(12)].map((_, i) => (
+              <div 
+                key={`star-${i}`}
+                className="star-sparkle"
+                style={{ 
+                  animationDelay: `${i * 0.22}s`,
+                  left: `${42 + (i % 4) * 4}%`
+                }}
+              >
+                ⭐
+              </div>
+            ))}
+            
+            {/* Heart Sparkles ❤️ */}
+            {[...Array(10)].map((_, i) => (
+              <div 
+                key={`heart-${i}`}
+                className="heart-sparkle"
+                style={{ 
+                  animationDelay: `${i * 0.25}s`,
+                  left: `${43 + (i % 4) * 4}%`
+                }}
+              >
+                ❤️
+              </div>
+            ))}
+            
+            {/* Diamond Sparkles ✨ */}
+            {[...Array(14)].map((_, i) => (
+              <div 
+                key={`diamond-${i}`}
+                className="diamond-sparkle"
+                style={{ 
+                  animationDelay: `${i * 0.16}s`,
+                  left: `${41 + (i % 5) * 4.5}%`
+                }}
+              >
+                ✨
+              </div>
+            ))}
+            
+            {/* Orange Fire Sparkles */}
+            {[...Array(12)].map((_, i) => (
+              <div 
+                key={`orange-${i}`}
+                className="sparkle orange"
+                style={{ 
+                  animationDelay: `${i * 0.2}s`,
+                  left: `${45 + (i % 4) * 3}%`
+                }}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+
+
+      {/* Right Flower Pot Firecracker */}
+      <div className="absolute right-4 md:right-10 lg:right-20 bottom-16 md:bottom-20 lg:bottom-24 z-10">
+        <div className="firecracker-wrapper">
+          {/* Traditional Cone Pot */}
+          <div className="flower-pot-cone flower-pot-cone-right">
+            <div className="pot-opening"></div>
+            <div className="pot-cone-body">
+              <div className="golden-stripe"></div>
+              <div className="pattern-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+            <div className="pot-bottom"></div>
+          </div>
+          
+          {/* SUPER FESTIVE SPARKLE FOUNTAIN */}
+          <div className="festive-fountain">
+            {/* Golden Round Sparkles */}
+            {[...Array(18)].map((_, i) => (
+              <div 
+                key={`gold-${i}`}
+                className="sparkle golden"
+                style={{ 
+                  animationDelay: `${i * 0.15}s`,
+                  left: `${44 + (i % 5) * 3}%`
+                }}
+              />
+            ))}
+            
+            {/* Small Fire Flames */}
+            {[...Array(15)].map((_, i) => (
+              <div 
+                key={`flame-${i}`}
+                className="fire-flame"
+                style={{ 
+                  animationDelay: `${i * 0.18}s`,
+                  left: `${43 + (i % 5) * 3.5}%`
+                }}
+              />
+            ))}
+            
+            {/* Star Sparkles ⭐ */}
+            {[...Array(12)].map((_, i) => (
+              <div 
+                key={`star-${i}`}
+                className="star-sparkle"
+                style={{ 
+                  animationDelay: `${i * 0.22}s`,
+                  left: `${42 + (i % 4) * 4}%`
+                }}
+              >
+                ⭐
+              </div>
+            ))}
+            
+            {/* Heart Sparkles ❤️ */}
+            {[...Array(10)].map((_, i) => (
+              <div 
+                key={`heart-${i}`}
+                className="heart-sparkle"
+                style={{ 
+                  animationDelay: `${i * 0.25}s`,
+                  left: `${43 + (i % 4) * 4}%`
+                }}
+              >
+                ❤️
+              </div>
+            ))}
+            
+            {/* Diamond Sparkles ✨ */}
+            {[...Array(14)].map((_, i) => (
+              <div 
+                key={`diamond-${i}`}
+                className="diamond-sparkle"
+                style={{ 
+                  animationDelay: `${i * 0.16}s`,
+                  left: `${41 + (i % 5) * 4.5}%`
+                }}
+              >
+                ✨
+              </div>
+            ))}
+            
+            {/* Orange Fire Sparkles */}
+            {[...Array(12)].map((_, i) => (
+              <div 
+                key={`orange-${i}`}
+                className="sparkle orange"
+                style={{ 
+                  animationDelay: `${i * 0.2}s`,
+                  left: `${45 + (i % 4) * 3}%`
+                }}
+              />
+            ))}
+          </div>
+        </div>
       </div>
 
 
       {/* Hero Content */}
       <div className="relative z-10 text-center text-white px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
         <div className="animate-fade-in">
-          {/* Main Title - Added Top Margin */}
-          <h1 className="font-display text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-4 sm:mb-6 leading-tight mt-8 sm:mt-10 lg:mt-12">
+          {/* Main Title - INCREASED MOBILE SIZE */}
+          <h1 className="font-display text-5xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-4 sm:mb-6 leading-tight mt-8 sm:mt-10 lg:mt-12">
             <span className="block">Gates Events</span>
-            <span className="inline-block bg-gradient-to-r from-yellow-300 via-amber-400 to-yellow-600 bg-clip-text text-transparent drop-shadow-sm">
+            <span className="inline-block bg-gradient-to-r from-yellow-300 via-amber-400 to-yellow-600 bg-clip-text text-transparent drop-shadow-sm text-6xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">
               2K25
             </span>
           </h1>
 
-
-          {/* Subtitle */}
           <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl mb-6 sm:mb-8 text-gray-200 max-w-4xl mx-auto leading-relaxed">
             Where Innovation Meets Excellence
           </p>
 
-
-          {/* Description */}
-          <p className="text-base sm:text-lg md:text-xl mb-8 sm:mb-12 text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          {/* Description - DECREASED MOBILE SIZE */}
+          <p className="text-sm sm:text-lg md:text-xl mb-8 sm:mb-12 text-gray-300 max-w-3xl mx-auto leading-relaxed">
             Join the Grand Tech and Cultural Fest at GATES Institute of Technology. 
             Experience cutting-edge competitions and vibrant celebrations.
           </p>
 
-
-          {/* CTA Buttons - Fixed Mobile Size */}
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mb-16 sm:mb-20">
             <Link
               to="/explore"
@@ -78,8 +274,7 @@ const HeroSection = () => {
         </div>
       </div>
 
-
-      {/* Scroll Indicator - higher on mobile, slightly down on laptop */}
+      {/* Scroll Indicator */}
       <div className="absolute bottom-14 sm:bottom-8 lg:bottom-10 left-1/2 transform -translate-x-1/2 z-20">
         <div className="flex flex-col items-center text-white/80 hover:text-white transition-colors duration-300 cursor-pointer animate-bounce-subtle">
           <span className="text-xs sm:text-sm mb-2 font-medium">Scroll to explore</span>
@@ -88,6 +283,437 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
+
+
+      {/* SUPER PERFECT CSS */}
+      <style jsx>{`
+        .firecracker-wrapper {
+          animation: subtle-shake 4s ease-in-out infinite;
+        }
+
+        @keyframes subtle-shake {
+          0%, 100% { transform: translateY(0) rotate(0deg); }
+          25% { transform: translateY(-4px) rotate(-1deg); }
+          75% { transform: translateY(-2px) rotate(1deg); }
+        }
+
+        /* Pot Design */
+        .flower-pot-cone {
+          position: relative;
+          width: 50px;
+          height: 70px;
+          filter: drop-shadow(0 12px 30px rgba(0, 0, 0, 0.7));
+        }
+
+        @media (min-width: 768px) {
+          .flower-pot-cone { width: 65px; height: 90px; }
+        }
+
+        @media (min-width: 1024px) {
+          .flower-pot-cone { width: 80px; height: 110px; }
+        }
+
+        .pot-opening {
+          width: 100%;
+          height: 18%;
+          background: radial-gradient(circle, #78350f 0%, #451a03 100%);
+          border-radius: 50%;
+          box-shadow: inset 0 -3px 8px rgba(0, 0, 0, 0.6), 0 0 15px rgba(217, 119, 6, 0.4);
+          position: relative;
+          z-index: 3;
+        }
+
+        .pot-cone-body {
+          width: 100%;
+          height: 70%;
+          background: linear-gradient(180deg, #dc2626 0%, #b91c1c 30%, #991b1b 70%, #7f1d1d 100%);
+          clip-path: polygon(25% 0%, 75% 0%, 100% 100%, 0% 100%);
+          position: relative;
+          box-shadow: inset -8px 0 20px rgba(0, 0, 0, 0.5), inset 8px 0 20px rgba(255, 100, 50, 0.2);
+        }
+
+        .flower-pot-cone-right .pot-cone-body {
+          background: linear-gradient(180deg, #ea580c 0%, #c2410c 30%, #9a3412 70%, #7c2d12 100%);
+        }
+
+        .golden-stripe {
+          position: absolute;
+          top: 35%;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 70%;
+          height: 4px;
+          background: linear-gradient(90deg, transparent, #fbbf24, #f59e0b, #fbbf24, transparent);
+          box-shadow: 0 0 15px rgba(251, 191, 36, 0.9), 0 0 30px rgba(251, 191, 36, 0.5);
+          animation: stripe-glow 1.5s ease-in-out infinite;
+        }
+
+        @keyframes stripe-glow {
+          0%, 100% { opacity: 1; filter: brightness(1); }
+          50% { opacity: 0.8; filter: brightness(1.3); }
+        }
+
+        .pattern-dots {
+          position: absolute;
+          top: 60%;
+          left: 50%;
+          transform: translateX(-50%);
+          display: flex;
+          gap: 6px;
+        }
+
+        .pattern-dots span {
+          width: 5px;
+          height: 5px;
+          background: #fbbf24;
+          border-radius: 50%;
+          box-shadow: 0 0 10px rgba(251, 191, 36, 0.9);
+          animation: dot-pulse 1.2s ease-in-out infinite;
+        }
+
+        .pattern-dots span:nth-child(2) { animation-delay: 0.2s; }
+        .pattern-dots span:nth-child(3) { animation-delay: 0.4s; }
+
+        @keyframes dot-pulse {
+          0%, 100% { transform: scale(1); opacity: 1; }
+          50% { transform: scale(1.3); opacity: 0.7; }
+        }
+
+        .pot-bottom {
+          width: 115%;
+          height: 12%;
+          background: linear-gradient(135deg, #451a03 0%, #78350f 50%, #451a03 100%);
+          border-radius: 50%;
+          position: absolute;
+          bottom: 0;
+          left: -7.5%;
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
+        }
+
+        /* FESTIVE FOUNTAIN - HIGHER ON MOBILE */
+        .festive-fountain {
+          position: absolute;
+          bottom: 100%;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 130px;
+          height: 350px; /* MUCH TALLER FOR MOBILE */
+          pointer-events: none;
+        }
+
+        @media (min-width: 768px) {
+          .festive-fountain {
+            width: 160px;
+            height: 270px;
+          }
+        }
+
+        @media (min-width: 1024px) {
+          .festive-fountain {
+            width: 190px;
+            height: 320px;
+          }
+        }
+
+        /* Golden Round Sparkles */
+        .sparkle {
+          position: absolute;
+          bottom: 0;
+          width: 5px;
+          height: 5px;
+          border-radius: 50%;
+          animation: sparkle-rise-mobile 2.2s ease-out infinite;
+        }
+
+        .sparkle.golden {
+          background: radial-gradient(circle, #fef3c7 0%, #fbbf24 50%, #f59e0b 100%);
+          box-shadow: 
+            0 0 15px rgba(251, 191, 36, 1),
+            0 0 30px rgba(251, 191, 36, 0.6);
+        }
+
+        .sparkle.orange {
+          background: radial-gradient(circle, #fed7aa 0%, #fb923c 50%, #f97316 100%);
+          box-shadow: 
+            0 0 12px rgba(249, 115, 22, 1),
+            0 0 25px rgba(249, 115, 22, 0.6);
+        }
+
+        /* MOBILE - SPARKLES GO MUCH HIGHER */
+        @keyframes sparkle-rise-mobile {
+          0% {
+            transform: translateY(0) translateX(0) scale(0.5);
+            opacity: 0;
+          }
+          10% {
+            opacity: 1;
+          }
+          100% {
+            transform: translateY(-350px) translateX(calc((var(--random, 1) - 0.5) * 50px)) scale(0.3);
+            opacity: 0;
+          }
+        }
+
+        /* Small Fire Flame Shapes */
+        .fire-flame {
+          position: absolute;
+          bottom: 0;
+          width: 6px;
+          height: 10px;
+          background: linear-gradient(to top, #ff6b35 0%, #f59e0b 40%, #fbbf24 70%, #fef3c7 100%);
+          border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+          animation: flame-rise-mobile 2.4s ease-out infinite;
+          box-shadow: 
+            0 0 10px rgba(251, 191, 36, 0.8),
+            0 0 20px rgba(255, 107, 53, 0.5);
+          filter: blur(0.5px);
+        }
+
+        /* MOBILE - FLAMES GO MUCH HIGHER */
+        @keyframes flame-rise-mobile {
+          0% {
+            transform: translateY(0) scale(0.8) rotate(0deg);
+            opacity: 0;
+          }
+          10% {
+            opacity: 1;
+          }
+          100% {
+            transform: translateY(-330px) scale(0.4) rotate(10deg);
+            opacity: 0;
+          }
+        }
+
+        /* Star Sparkles ⭐ */
+        .star-sparkle {
+          position: absolute;
+          bottom: 0;
+          font-size: 12px;
+          animation: star-rise-mobile 2.8s ease-out infinite;
+          filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.9));
+        }
+
+        /* MOBILE - STARS GO MUCH HIGHER */
+        @keyframes star-rise-mobile {
+          0% {
+            transform: translateY(0) scale(0.3) rotate(0deg);
+            opacity: 0;
+          }
+          10% {
+            opacity: 1;
+          }
+          100% {
+            transform: translateY(-340px) scale(0.8) rotate(360deg);
+            opacity: 0;
+          }
+        }
+
+        /* Heart Sparkles ❤️ */
+        .heart-sparkle {
+          position: absolute;
+          bottom: 0;
+          font-size: 10px;
+          animation: heart-rise-mobile 3s ease-out infinite;
+          filter: drop-shadow(0 0 6px rgba(255, 50, 100, 0.8));
+        }
+
+        /* MOBILE - HEARTS GO MUCH HIGHER */
+        @keyframes heart-rise-mobile {
+          0% {
+            transform: translateY(0) scale(0.3);
+            opacity: 0;
+          }
+          10% {
+            opacity: 1;
+          }
+          50% {
+            transform: translateY(-170px) scale(0.9);
+          }
+          100% {
+            transform: translateY(-340px) scale(0.4);
+            opacity: 0;
+          }
+        }
+
+        /* Diamond Sparkles ✨ */
+        .diamond-sparkle {
+          position: absolute;
+          bottom: 0;
+          font-size: 11px;
+          animation: diamond-rise-mobile 2.5s ease-out infinite;
+          filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.9));
+        }
+
+        /* MOBILE - DIAMONDS GO MUCH HIGHER */
+        @keyframes diamond-rise-mobile {
+          0% {
+            transform: translateY(0) scale(0.4) rotate(0deg);
+            opacity: 0;
+          }
+          10% {
+            opacity: 1;
+          }
+          100% {
+            transform: translateY(-335px) scale(0.7) rotate(180deg);
+            opacity: 0;
+          }
+        }
+
+        /* Tablet and Desktop - Normal Heights */
+        @media (min-width: 768px) {
+          .sparkle {
+            width: 6px;
+            height: 6px;
+            animation: sparkle-rise 2.2s ease-out infinite;
+          }
+
+          .fire-flame {
+            width: 7px;
+            height: 12px;
+            animation: flame-rise 2.4s ease-out infinite;
+          }
+
+          .star-sparkle {
+            font-size: 14px;
+            animation: star-rise 2.8s ease-out infinite;
+          }
+
+          .heart-sparkle {
+            font-size: 12px;
+            animation: heart-rise 3s ease-out infinite;
+          }
+
+          .diamond-sparkle {
+            font-size: 13px;
+            animation: diamond-rise 2.5s ease-out infinite;
+          }
+
+          @keyframes sparkle-rise {
+            0% {
+              transform: translateY(0) translateX(0) scale(0.5);
+              opacity: 0;
+            }
+            10% {
+              opacity: 1;
+            }
+            100% {
+              transform: translateY(-270px) translateX(calc((var(--random, 1) - 0.5) * 60px)) scale(0.3);
+              opacity: 0;
+            }
+          }
+
+          @keyframes flame-rise {
+            0% {
+              transform: translateY(0) scale(0.8) rotate(0deg);
+              opacity: 0;
+            }
+            10% {
+              opacity: 1;
+            }
+            100% {
+              transform: translateY(-250px) scale(0.4) rotate(10deg);
+              opacity: 0;
+            }
+          }
+
+          @keyframes star-rise {
+            0% {
+              transform: translateY(0) scale(0.3) rotate(0deg);
+              opacity: 0;
+            }
+            10% {
+              opacity: 1;
+            }
+            100% {
+              transform: translateY(-250px) scale(0.8) rotate(360deg);
+              opacity: 0;
+            }
+          }
+
+          @keyframes heart-rise {
+            0% {
+              transform: translateY(0) scale(0.3);
+              opacity: 0;
+            }
+            10% {
+              opacity: 1;
+            }
+            50% {
+              transform: translateY(-120px) scale(0.9);
+            }
+            100% {
+              transform: translateY(-240px) scale(0.4);
+              opacity: 0;
+            }
+          }
+
+          @keyframes diamond-rise {
+            0% {
+              transform: translateY(0) scale(0.4) rotate(0deg);
+              opacity: 0;
+            }
+            10% {
+              opacity: 1;
+            }
+            100% {
+              transform: translateY(-230px) scale(0.7) rotate(180deg);
+              opacity: 0;
+            }
+          }
+        }
+
+        @media (min-width: 1024px) {
+          .sparkle {
+            width: 7px;
+            height: 7px;
+          }
+
+          .fire-flame {
+            width: 8px;
+            height: 14px;
+          }
+
+          .star-sparkle {
+            font-size: 16px;
+          }
+
+          .heart-sparkle {
+            font-size: 14px;
+          }
+
+          .diamond-sparkle {
+            font-size: 15px;
+          }
+
+          @keyframes sparkle-rise {
+            0% {
+              transform: translateY(0) translateX(0) scale(0.5);
+              opacity: 0;
+            }
+            10% {
+              opacity: 1;
+            }
+            100% {
+              transform: translateY(-320px) translateX(calc((var(--random, 1) - 0.5) * 70px)) scale(0.3);
+              opacity: 0;
+            }
+          }
+
+          @keyframes flame-rise {
+            0% {
+              transform: translateY(0) scale(0.8) rotate(0deg);
+              opacity: 0;
+            }
+            10% {
+              opacity: 1;
+            }
+            100% {
+              transform: translateY(-300px) scale(0.4) rotate(10deg);
+              opacity: 0;
+            }
+          }
+        }
+      `}</style>
     </section>
   );
 };
