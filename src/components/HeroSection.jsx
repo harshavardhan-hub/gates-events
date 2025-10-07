@@ -17,20 +17,16 @@ const HeroSection = () => {
       </div>
 
 
-      {/* STRING LIGHTS - Higher on Laptop */}
+      {/* SIMPLE PERFECT STRING LIGHTS */}
       <div className="string-lights-container">
         <div className="string-wire"></div>
         <div className="lights-row">
-          {[...Array(20)].map((_, i) => (
+          {[...Array(15)].map((_, i) => (
             <div 
               key={i} 
-              className={`light-bulb color-${(i % 5) + 1}`}
-              style={{ animationDelay: `${i * 0.1}s` }}
-            >
-              <div className="bulb-cap"></div>
-              <div className="bulb-glass"></div>
-              <div className="bulb-wire"></div>
-            </div>
+              className={`simple-bulb bulb-color-${(i % 4) + 1}`}
+              style={{ animationDelay: `${i * 0.15}s` }}
+            />
           ))}
         </div>
       </div>
@@ -225,7 +221,7 @@ const HeroSection = () => {
       {/* Hero Content */}
       <div className="relative z-10 text-center text-white px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
         <div className="animate-fade-in">
-          {/* Main Title - MORE TOP MARGIN ON LAPTOP */}
+          {/* Main Title */}
           <h1 className="font-display text-5xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-4 sm:mb-6 leading-tight mt-8 sm:mt-10 lg:mt-18">
             <span className="block">Gates Events</span>
             <span className="inline-block bg-gradient-to-r from-yellow-300 via-amber-400 to-yellow-600 bg-clip-text text-transparent drop-shadow-sm text-6xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">
@@ -287,16 +283,16 @@ const HeroSection = () => {
       </div>
 
 
-      {/* CSS STYLES */}
+      {/* SIMPLE PERFECT CSS STYLES */}
       <style jsx>{`
-        /* STRING LIGHTS CONTAINER - HIGHER ON LAPTOP */
+        /* SIMPLE STRING LIGHTS - MOVED DOWN ON LAPTOP */
         .string-lights-container {
           position: absolute;
-          top: 80px;
+          top: 65px;
           left: 0;
           right: 0;
           width: 100%;
-          height: 80px;
+          height: 60px;
           z-index: 5;
           pointer-events: none;
         }
@@ -304,26 +300,25 @@ const HeroSection = () => {
         @media (min-width: 768px) {
           .string-lights-container {
             top: 100px;
-            height: 100px;
+            height: 70px;
           }
         }
 
         @media (min-width: 1024px) {
           .string-lights-container {
-            top: 60px;  /* MOVED UP ON LAPTOP */
-            height: 120px;
+            top: 80px;  /* MOVED DOWN ON LAPTOP (was 60px) */
+            height: 80px;
           }
         }
 
-        /* STRING WIRE */
+        /* SIMPLE WIRE */
         .string-wire {
           position: absolute;
           top: 0;
           left: 0;
           right: 0;
-          height: 2px;
-          background: rgba(150, 150, 150, 0.3);
-          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+          height: 1px;
+          background: rgba(255, 255, 255, 0.2);
         }
 
         /* LIGHTS ROW */
@@ -332,149 +327,77 @@ const HeroSection = () => {
           display: flex;
           justify-content: space-evenly;
           width: 100%;
-          padding: 0 10px;
+          padding: 0 20px;
         }
 
-        @media (min-width: 768px) {
-          .lights-row {
-            padding: 0 20px;
-          }
-        }
-
-        /* INDIVIDUAL LIGHT BULB */
-        .light-bulb {
+        /* SIMPLE CLEAN BULB */
+        .simple-bulb {
           position: relative;
-          width: 12px;
-          height: 40px;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
+          width: 10px;
+          height: 18px;
+          border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
+          animation: gentle-glow 2s ease-in-out infinite;
+          filter: drop-shadow(0 0 8px currentColor);
         }
 
         @media (min-width: 768px) {
-          .light-bulb {
-            width: 15px;
-            height: 50px;
+          .simple-bulb {
+            width: 12px;
+            height: 22px;
+            filter: drop-shadow(0 0 10px currentColor);
           }
         }
 
         @media (min-width: 1024px) {
-          .light-bulb {
-            width: 18px;
-            height: 60px;
+          .simple-bulb {
+            width: 14px;
+            height: 26px;
+            filter: drop-shadow(0 0 12px currentColor);
           }
         }
 
-        /* BULB WIRE CONNECTING TO STRING */
-        .bulb-wire {
+        /* SIMPLE BULB - Add connection wire */
+        .simple-bulb::before {
+          content: '';
           position: absolute;
-          top: 0;
+          top: -8px;
           left: 50%;
           transform: translateX(-50%);
           width: 1px;
           height: 8px;
-          background: rgba(100, 100, 100, 0.4);
+          background: rgba(150, 150, 150, 0.3);
         }
 
-        @media (min-width: 768px) {
-          .bulb-wire {
-            height: 10px;
-          }
+        /* ELEGANT COLORS */
+        .simple-bulb.bulb-color-1 {
+          background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+          color: #fbbf24;
         }
 
-        @media (min-width: 1024px) {
-          .bulb-wire {
-            height: 12px;
-          }
+        .simple-bulb.bulb-color-2 {
+          background: linear-gradient(135deg, #fb923c 0%, #f97316 100%);
+          color: #fb923c;
         }
 
-        /* BULB CAP */
-        .bulb-cap {
-          position: absolute;
-          top: 8px;
-          width: 8px;
-          height: 4px;
-          background: #333;
-          border-radius: 2px 2px 0 0;
+        .simple-bulb.bulb-color-3 {
+          background: linear-gradient(135deg, #fde047 0%, #facc15 100%);
+          color: #fde047;
         }
 
-        @media (min-width: 768px) {
-          .bulb-cap {
-            top: 10px;
-            width: 10px;
-            height: 5px;
-          }
+        .simple-bulb.bulb-color-4 {
+          background: linear-gradient(135deg, #fdba74 0%, #fb923c 100%);
+          color: #fdba74;
         }
 
-        @media (min-width: 1024px) {
-          .bulb-cap {
-            top: 12px;
-            width: 12px;
-            height: 6px;
-          }
-        }
-
-        /* BULB GLASS */
-        .bulb-glass {
-          position: absolute;
-          top: 12px;
-          width: 12px;
-          height: 18px;
-          border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
-          animation: twinkle 1.5s ease-in-out infinite;
-        }
-
-        @media (min-width: 768px) {
-          .bulb-glass {
-            top: 15px;
-            width: 15px;
-            height: 22px;
-          }
-        }
-
-        @media (min-width: 1024px) {
-          .bulb-glass {
-            top: 18px;
-            width: 18px;
-            height: 26px;
-          }
-        }
-
-        /* BULB COLORS */
-        .light-bulb.color-1 .bulb-glass {
-          background: #ff4444;
-          box-shadow: 0 0 10px rgba(255, 68, 68, 0.8), 0 0 20px rgba(255, 68, 68, 0.4);
-        }
-
-        .light-bulb.color-2 .bulb-glass {
-          background: #ffeb3b;
-          box-shadow: 0 0 10px rgba(255, 235, 59, 0.8), 0 0 20px rgba(255, 235, 59, 0.4);
-        }
-
-        .light-bulb.color-3 .bulb-glass {
-          background: #4caf50;
-          box-shadow: 0 0 10px rgba(76, 175, 80, 0.8), 0 0 20px rgba(76, 175, 80, 0.4);
-        }
-
-        .light-bulb.color-4 .bulb-glass {
-          background: #2196f3;
-          box-shadow: 0 0 10px rgba(33, 150, 243, 0.8), 0 0 20px rgba(33, 150, 243, 0.4);
-        }
-
-        .light-bulb.color-5 .bulb-glass {
-          background: #ff9800;
-          box-shadow: 0 0 10px rgba(255, 152, 0, 0.8), 0 0 20px rgba(255, 152, 0, 0.4);
-        }
-
-        /* TWINKLING ANIMATION */
-        @keyframes twinkle {
+        /* GENTLE GLOW ANIMATION */
+        @keyframes gentle-glow {
           0%, 100% {
             opacity: 1;
-            filter: brightness(1);
+            transform: scale(1);
           }
           50% {
-            opacity: 0.4;
-            filter: brightness(0.6);
+            opacity: 0.6;
+            transform: scale(0.95);
           }
         }
 
