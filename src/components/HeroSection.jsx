@@ -20,9 +20,9 @@ const HeroSection = () => {
       <div className="relative z-10 text-center text-white px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto lg:pt-40">
         <div className="animate-fade-in">
           {/* Main Title - Fixed Mobile Spacing */}
-          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-4 sm:mb-6 leading-tight">
+          <h1 className="font-display text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-4 sm:mb-6 leading-tight"> {/* switched to display font */}
             <span className="block">Gates Events</span>
-            <span className="text-gradient bg-gradient-to-r from-orange-400 to-pink-400 bg-clip-text text-transparent">
+            <span className="inline-block bg-gradient-to-r from-yellow-300 via-amber-400 to-yellow-600 bg-clip-text text-transparent drop-shadow-sm">
               2K25
             </span>
           </h1>
@@ -73,16 +73,15 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* Scroll Indicator - Fixed Position at Bottom */}
-        <div className="absolute bottom-12 sm:bottom-8 left-1/2 transform -translate-x-1/2 z-20">
-          <div className="flex flex-col items-center text-white/80 hover:text-white transition-colors duration-300 cursor-pointer animate-bounce-subtle">
-            <span className="text-xs sm:text-sm mb-2 font-medium">Scroll to explore</span>
-            <div className="w-6 h-10 border-2 border-white/60 rounded-full flex justify-center">
-              <div className="w-1 h-3 bg-white/80 rounded-full mt-2 animate-pulse"></div>
-            </div>
+      {/* Scroll Indicator - Fixed Position at Bottom (moved lower) */}
+      <div className="absolute bottom-4 sm:bottom-3 left-1/2 transform -translate-x-1/2 z-20">
+        <div className="flex flex-col items-center text-white/80 hover:text-white transition-colors duration-300 cursor-pointer animate-bounce-subtle">
+          <span className="text-xs sm:text-sm mb-2 font-medium">Scroll to explore</span>
+          <div className="w-6 h-10 border-2 border-white/60 rounded-full flex justify-center">
+            <div className="w-1 h-3 bg-white/80 rounded-full mt-2 animate-pulse"></div>
           </div>
         </div>
-
+      </div>
     </section>
   );
 };
