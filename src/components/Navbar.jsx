@@ -2,28 +2,34 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { NAV_LINKS, ASSETS } from '../utils/constants.js';
 
+
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
 
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
 
   useEffect(() => {
     // Close mobile menu when route changes
     setIsMenuOpen(false);
   }, [location]);
 
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
 
   const handleLinkClick = (href) => {
     setIsMenuOpen(false);
@@ -37,8 +43,10 @@ const Navbar = () => {
     }
   };
 
+
   // Filter out Flash News from navigation links
   const filteredNavLinks = NAV_LINKS.filter(link => link.id !== 'flash-news');
+
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -62,6 +70,7 @@ const Navbar = () => {
       
           </Link>
 
+
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {filteredNavLinks.map((link) => (
@@ -71,15 +80,15 @@ const Navbar = () => {
                 onClick={() => handleLinkClick(link.href)}
                 className={`nav-link relative font-medium transition-all duration-300 ${
                   location.pathname === link.href
-                    ? 'text-primary'
+                    ? 'text-yellow-500'
                     : isScrolled
-                    ? 'text-gray-700 hover:text-primary'
-                    : 'text-white hover:text-gray-200'
+                    ? 'text-gray-700 hover:text-yellow-500'
+                    : 'text-white hover:text-yellow-300'
                 }`}
               >
                 {link.name}
                 {location.pathname === link.href && (
-                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-primary rounded-full" />
+                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-yellow-300 via-amber-400 to-yellow-600 rounded-full" />
                 )}
               </Link>
             ))}
@@ -96,6 +105,7 @@ const Navbar = () => {
               </svg>
             </Link>
           </div>
+
 
           {/* Mobile Menu Button */}
           <button
@@ -118,6 +128,7 @@ const Navbar = () => {
           </button>
         </div>
 
+
         {/* Mobile Navigation - Compact Design */}
         {isMenuOpen && (
           <div className="md:hidden bg-white/95 backdrop-blur-md border-t border-gray-200 shadow-lg">
@@ -129,9 +140,10 @@ const Navbar = () => {
                   onClick={() => handleLinkClick(link.href)}
                   className={`block py-2 px-3 rounded-lg text-sm font-medium transition-all duration-300 ${
                     location.pathname === link.href
-                      ? 'text-primary bg-blue-50 border-l-2 border-primary'
-                      : 'text-gray-700 hover:text-primary hover:bg-gray-50'
+                      ? 'text-yellow-600 bg-gradient-to-r from-yellow-50 via-amber-50 to-yellow-50 border-l-4'
+                      : 'text-gray-700 hover:text-yellow-600 hover:bg-gray-50'
                   }`}
+                  style={location.pathname === link.href ? { borderLeftColor: '#fbbf24' } : {}}
                 >
                   <div className="flex items-center">
                     {/* Smaller icons for mobile menu items */}
@@ -155,12 +167,12 @@ const Navbar = () => {
                 </Link>
               ))}
               
-              {/* Compact Mobile CTA Button */}
+              {/* Compact Mobile CTA Button with Gold Gradient */}
               <div className="pt-3 border-t border-gray-200">
                 <Link
                   to="/explore"
                   onClick={() => setIsMenuOpen(false)}
-                  className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold py-2.5 px-4 rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 inline-flex items-center justify-center text-sm shadow-md"
+                  className="w-full bg-gradient-to-r from-yellow-300 via-amber-400 to-yellow-600 text-gray-900 font-semibold py-2.5 px-4 rounded-lg hover:from-yellow-400 hover:via-amber-500 hover:to-yellow-700 transition-all duration-300 inline-flex items-center justify-center text-sm shadow-md"
                 >
                   <svg className="h-4 w-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
@@ -175,5 +187,6 @@ const Navbar = () => {
     </nav>
   );
 };
+
 
 export default Navbar;

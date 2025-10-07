@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ASSETS } from '../utils/constants.js';
 
+
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -16,27 +17,31 @@ const HeroSection = () => {
         <div className="hero-overlay" />
       </div>
 
+
       {/* Hero Content */}
-      <div className="relative z-10 text-center text-white px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto lg:pt-40">
+      <div className="relative z-10 text-center text-white px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
         <div className="animate-fade-in">
-          {/* Main Title - Fixed Mobile Spacing */}
-          <h1 className="font-display text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-4 sm:mb-6 leading-tight">
+          {/* Main Title - Added Top Margin */}
+          <h1 className="font-display text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-4 sm:mb-6 leading-tight mt-8 sm:mt-10 lg:mt-12">
             <span className="block">Gates Events</span>
             <span className="inline-block bg-gradient-to-r from-yellow-300 via-amber-400 to-yellow-600 bg-clip-text text-transparent drop-shadow-sm">
               2K25
             </span>
           </h1>
 
+
           {/* Subtitle */}
           <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl mb-6 sm:mb-8 text-gray-200 max-w-4xl mx-auto leading-relaxed">
             Where Innovation Meets Excellence
           </p>
 
+
           {/* Description */}
           <p className="text-base sm:text-lg md:text-xl mb-8 sm:mb-12 text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Join the most spectacular technical and cultural festival at GATES Institute of Technology. 
-            Experience cutting-edge competitions, innovative workshops, and vibrant celebrations.
+            Join the Grand Tech and Cultural Fest at GATES Institute of Technology. 
+            Experience cutting-edge competitions and vibrant celebrations.
           </p>
+
 
           {/* CTA Buttons - Fixed Mobile Size */}
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mb-16 sm:mb-20">
@@ -73,8 +78,9 @@ const HeroSection = () => {
         </div>
       </div>
 
+
       {/* Scroll Indicator - higher on mobile, slightly down on laptop */}
-      <div className="absolute bottom-14 sm:bottom-6 lg:bottom-4 left-1/2 transform -translate-x-1/2 z-20">
+      <div className="absolute bottom-14 sm:bottom-8 lg:bottom-10 left-1/2 transform -translate-x-1/2 z-20">
         <div className="flex flex-col items-center text-white/80 hover:text-white transition-colors duration-300 cursor-pointer animate-bounce-subtle">
           <span className="text-xs sm:text-sm mb-2 font-medium">Scroll to explore</span>
           <div className="w-6 h-10 border-2 border-white/60 rounded-full flex justify-center">
@@ -85,5 +91,6 @@ const HeroSection = () => {
     </section>
   );
 };
+
 
 export default HeroSection;
